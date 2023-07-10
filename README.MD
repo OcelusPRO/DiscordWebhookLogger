@@ -63,5 +63,5 @@ DWL_DELAY           --> The delay between two webhook send
 ```
 
 ## License
-[GNY AGPL-3.0 License](./LICENSE.txt)
+[GNU AGPL-3.0 License](./LICENSE.txt)
 
