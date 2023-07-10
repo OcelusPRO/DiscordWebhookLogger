@@ -21,8 +21,9 @@ class DiscordLogManager(private val url: String, private val delay: Long = 5000)
     private suspend fun postingService(){
         while (true) {
             if (postQueue.isNotEmpty()) {
+                val actualisedUrl = System.getenv("DWL_URL")
                 val wMessage = postQueue.poll()
-                WebhookManager.sender(wMessage, url)
+                WebhookManager.sender(wMessage, actualisedUrl ?: url)
             }
             delay(delay)
         }
