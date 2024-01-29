@@ -15,7 +15,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     
-    implementation("club.minnced:discord-webhooks:0.8.2")
+    implementation("club.minnced:discord-webhooks:0.8.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.2")
     
     api("org.slf4j:slf4j-api:2.0.7")
