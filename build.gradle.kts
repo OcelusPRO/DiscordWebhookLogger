@@ -2,11 +2,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.9.0"
-    application
     `maven-publish`
 }
 
-group = "org.example"
+group = "fr.ftnl.discordWebhookLogger"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -33,6 +32,14 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-application {
-    mainClass.set("MainKt")
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = group.toString()
+            artifactId = "library"
+            version = version
+
+            from(components["java"])
+        }
+    }
 }
